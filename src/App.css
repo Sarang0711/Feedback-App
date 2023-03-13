@@ -1,38 +1,230 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #202142;
+  color: #fff;
+  line-height: 1.6;
+}
+header {
+  height: 70px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: large;
+  font-weight: bold;
+}
+ul {
+  list-style: none;
+}
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
+.card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 15px;
+  padding: 40px 50px;
+  margin: 20px 0;
+  position: relative; 
+}
+
+/* The element must have both the classes card and reverse  */
+.card.reverse {
+  background-color: rgba(0,0,0,0.4);
+  color: #fff;
+}
+.card h2 {
+  font-size: 22px;
+  font-weight: 600;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.feedback-stats {
+  color: #fff;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.num-display {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+.close, .edit {
+  position: absolute;
+  top:10px;
+  right: 20px;
+  cursor:pointer;
+  border: none;
+  background: none;
+  font-size: large;
+}
+.edit {
+  right: 50px;
+}
+.input-group {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+input {
+  flex-grow: 2;
+  border: none;
+  color:#202142;
+  font-size: 16px;
+}
+input:focus{
+  outline: none;
+}
+.btn {
+  padding: 10px 25px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor:pointer;
+}
+.btn-primary {
+  background-color: #202142;
+}
+.btn-secondary {
+  background: #ff6a95;
+}
+.btn:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+.btn:disabled {
+  background-color: #cccccc;
+  color: #333;
+  cursor: auto;
+}
+/* Button should have any hover effect when disabled */
+.btn:disabled:hover {  
+  transform: scale(1);
+  opacity: 1;
+}
+.edit {
+
+}
+.message {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0 40px;
+}
+.rating li,
+.num-display {
+  background: #f4f4f4;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 19px;
+  border: 1px #eee solid;
+  transition: 0.3s;
+}
+.rating li {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rating li label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%; 
+  transform: translate(-50%, -50%); 
 }
+
+[type = 'radio'] {
+  opacity: 0;
+}
+
+.rating li:hover,
+.num-display {
+  background: #ff6a95;
+  color: #fff;
+}
+[type='radio']:checked ~ label{
+  background-color: #ff6a95;
+  color: #fff;
+}
+/* .close,
+.edit {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+} */
+
+/* .edit {
+  right: 40px;
+} */
+
+/* FIX: Remove position: absolute to keep about icon at the bottom of the
+ /* document 
+.about-link {
+  display: flex;
+  justify-content: flex-end;
+} */
+
+/* FIX: Remove position: absolute to keep about icon at the bottom of the
+  document 
+.about-link a {
+  color: #fff;
+  cursor: pointer;
+}
+
+.about-link a:hover {
+  color: #ff6a95;
+}
+
+.about h1 {
+  margin-bottom: 20px;
+}
+
+.about p {
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .rating li {
+    margin: 10px 3px;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0 40px;
+  }
+
+  .input-group input {
+    width: 80%;
+  }
+} */
